@@ -30,7 +30,7 @@ export default function Hero() {
           quality={90}
         />
         {/* Light overlay — photo stays visible, bottom fades dark for buttons */}
-        <div className="absolute inset-0 bg-gradient-to-b from-lobi-bg/30 via-lobi-bg/20 to-lobi-bg" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lobi-bg/80 via-lobi-bg/65 to-lobi-bg" />
       </div>
 
       {/* Content */}
