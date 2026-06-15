@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Lobi Brand Palette ── */
+  --color-lobi-bg:         #0d0805;
+  --color-lobi-surface:    #1c1209;
+  --color-lobi-surface-2:  #251a0c;
+  --color-lobi-border:     #3a2410;
+  --color-lobi-gold:       #d4890a;
+  --color-lobi-gold-light: #f0a820;
+  --color-lobi-red:        #c8432a;
+  --color-lobi-green:      #3a7a5c;
+  --color-lobi-cream:      #f0e8dc;
+  --color-lobi-muted:      #9a7a60;
+
+  /* ── Typography ── */
+  --font-sans:    var(--font-jakarta), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  /* ── Animations ── */
+  --animate-fade-up:    fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in:    fade-in 0.7s ease both;
+  --animate-slide-down: slide-down 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0805;
+  color: #f0e8dc;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── Scroll-reveal utilities ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.40s; }
+.reveal-d6 { transition-delay: 0.48s; }
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d0805; }
+::-webkit-scrollbar-thumb { background: #3a2410; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #d4890a; }
