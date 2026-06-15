@@ -22,12 +22,12 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://picsum.photos/id/292/1920/1080"
+          src="/images/hero.jpg"
           alt="Authentiek Surinaams eten bij Broodje Lobi"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
-          quality={85}
+          quality={90}
         />
         {/* Dark warm gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-lobi-bg/90 via-lobi-bg/55 to-lobi-bg" />

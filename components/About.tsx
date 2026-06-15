@@ -71,10 +71,10 @@ export default function About() {
           <div className={`reveal reveal-d2 ${inView ? "in-view" : ""} relative`}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image
-                src="https://picsum.photos/id/488/800/1000"
+                src="/images/about.jpg"
                 alt="Verse Surinaamse gerechten bereid met liefde"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Warm tint overlay */}
