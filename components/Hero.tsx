@@ -29,24 +29,8 @@ export default function Hero() {
           priority
           quality={90}
         />
-        {/* Dark warm gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-lobi-bg/90 via-lobi-bg/55 to-lobi-bg" />
-        {/* Radial gold glow top-right */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 70% 20%, rgba(212,137,10,0.10), transparent)",
-          }}
-        />
-        {/* Red warm tint bottom-left */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 40% at 10% 80%, rgba(200,67,42,0.08), transparent)",
-          }}
-        />
+        {/* Light overlay — photo stays visible, bottom fades dark for buttons */}
+        <div className="absolute inset-0 bg-gradient-to-b from-lobi-bg/30 via-lobi-bg/20 to-lobi-bg" />
       </div>
 
       {/* Content */}
@@ -69,10 +53,13 @@ export default function Hero() {
           style={{ animationDelay: "0.35s" }}
         >
           <h1 className="font-display leading-none">
-            <span className="block text-xl font-light tracking-[0.35em] text-lobi-cream/50 uppercase sm:text-2xl lg:text-3xl">
+            <span className="block text-xl font-light tracking-[0.35em] text-lobi-cream/80 uppercase sm:text-2xl lg:text-3xl" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}>
               Broodje
             </span>
-            <span className="block font-black italic text-lobi-gold text-[5.5rem] sm:text-[8rem] lg:text-[12rem] xl:text-[15rem]">
+            <span
+              className="block font-black italic text-lobi-gold text-[5.5rem] sm:text-[8rem] lg:text-[12rem] xl:text-[15rem]"
+              style={{ textShadow: "0 4px 32px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.9)" }}
+            >
               Lobi
             </span>
           </h1>
